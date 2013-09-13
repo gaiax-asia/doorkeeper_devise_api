@@ -1,0 +1,40 @@
+<div ng-app="messageApp" ng-controller="MessageCtrl" ng-switch on="logged_in">
+  <div ng-switch-when="false">
+    <h2>Messages
+      <span class="pull-right">
+        <a class="btn btn-danger" ng-click="logout()">Logout</a>
+      </span>
+    </h2>
+    
+    <div ng-repeat="message in messages">
+      <strong>{{message.sender_name}}</strong>
+      {{message.body}}
+      &nbsp;&nbsp;
+      <a class="btn btn-link" ng-click="deleteMessage($index)">&times;</a>
+    </div>
+    
+    <div class="container" style="margin-top:20px">
+      <form ng-submit="sendMessage()">
+        <textarea ng-model="message.body" placeholder="Type your message here"></textarea>
+        <br/>
+        <input class='btn-primary' type='submit' value='Post'>
+      </form>
+    </div>
+  </div>
+  <!--
+  <div ng-switch-when="false">
+    <div class='hero-unit'>
+      <h3>You need to login to use the message boards</h3>
+      
+      <div class="container" style="margin-top:20px">
+        <form ng-submit="login()">
+          <input type='text' placeholder="Username" class="span3" ng-model="user.username">
+          <input type='password' placeholder="Password" class="span3" ng-model="user.password">
+          <br/>
+          <input class='btn-primary' type='submit' value='Login'>
+        </form>
+      </div>
+    </div>
+  </div>
+    -->
+</div>
