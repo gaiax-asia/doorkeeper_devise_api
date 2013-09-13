@@ -56,7 +56,7 @@ app.controller 'MessageCtrl',
     # create
     $scope.sendMessage = () ->
       Message.save(
-        { sender_name: 'user' , body: $scope.message.body }
+        { sender_name: $scope.current_user.username , body: $scope.message.body }
       , (response) ->
           $scope.messages.push response
           $scope.message.body = ""

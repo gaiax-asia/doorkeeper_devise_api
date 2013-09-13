@@ -1,5 +1,5 @@
 <div ng-app="messageApp" ng-controller="MessageCtrl" ng-switch on="logged_in">
-  <div ng-switch-when="false">
+  <div ng-switch-when="true">
     <h2>Messages
       <span class="pull-right">
         <a class="btn btn-danger" ng-click="logout()">Logout</a>
@@ -21,7 +21,7 @@
       </form>
     </div>
   </div>
-  <!--
+  
   <div ng-switch-when="false">
     <div class='hero-unit'>
       <h3>You need to login to use the message boards</h3>
@@ -36,5 +36,4 @@
       </div>
     </div>
   </div>
-    -->
 </div>
